@@ -47,11 +47,13 @@ int main(int argc, char* argv[]) {
 
 	// Set the name of your CAN bus. "slcan0" is a common bus name
 	// for the first SocketCAN device on a Linux system.
-	const std::string busname = "slcan0";
+	const std::string busname = "can0";
 
 	// Set the baudrate of your CAN bus. Most drivers support the values
 	// "1M", "500K", "125K", "100K", "50K", "20K", "10K" and "5K".
-	const std::string baudrate = "500K";
+	const std::string baudrate = "250K";
+
+	const size_t num_devices_required = 0;
 
 	PRINT("This example publishes and subscribes JointState messages for each connected CiA 402 device as well as"
 		<<"uint8 messages for each connected digital IO device (CiA 401).");
@@ -67,7 +69,7 @@ int main(int argc, char* argv[]) {
 	//master.core.nmt.reset_all_nodes();
 
 	std::this_thread::sleep_for(std::chrono::seconds(1));
-	size_t num_devices_required = 1;
+	
 	while (master.num_devices()<num_devices_required) {
 		ERROR("Number of devices found: " << master.num_devices() << ". Waiting for " << num_devices_required << ".");
 		PRINT("Trying to discover more nodes via NMT Node Guarding...");
