@@ -121,11 +121,11 @@ int main() {
 
   // Set the name of your CAN bus. "slcan0" is a common bus name
   // for the first SocketCAN device on a Linux system.
-  const std::string busname = "slcan0";
+  const std::string busname = "can0";
 
   // Set the baudrate of your CAN bus. Most drivers support the values
   // "1M", "500K", "125K", "100K", "50K", "20K", "10K" and "5K".
-  const std::string baudrate = "500K";
+  const std::string baudrate = "1M";
 
   // Set the heartbeat interval for slave device. Most drivers support the
   // values can be "125", "250", "500" and "1000" millisecond.
