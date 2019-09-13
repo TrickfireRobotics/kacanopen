@@ -72,7 +72,10 @@ namespace kaco {
 					[](Device& device,const Value& target_position) -> Value {
 						DEBUG_LOG("Set target pos to "<<target_position);
 						device.set_entry("Target position", target_position);
+                        device.execute("set_controlword_flag","controlword_pp_new_set_point");
+						device.execute("unset_controlword_flag","controlword_pp_new_set_point");
 						device.execute("set_controlword_flag","controlword_pp_change_set_immediately");
+                        //device.execute("unset_controlword_flag","controlword_pp_change_set_immediately");
 						return Value();
 					}
 				}
