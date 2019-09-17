@@ -74,8 +74,7 @@ namespace kaco {
 						device.set_entry("Target position", target_position);
                         device.execute("set_controlword_flag","controlword_pp_new_set_point");
 						device.execute("unset_controlword_flag","controlword_pp_new_set_point");
-						device.execute("set_controlword_flag","controlword_pp_change_set_immediately");
-                        //device.execute("unset_controlword_flag","controlword_pp_change_set_immediately");
+						device.execute("set_controlword_flag","controlword_pp_change_on_set_point");
 						return Value();
 					}
 				}
@@ -119,7 +118,7 @@ namespace kaco {
 				{ "controlword_pp_new_set_point",               static_cast<uint16_t>(1<<4) },
 				{ "controlword_pp_change_set_immediately",      static_cast<uint16_t>(1<<5) },
 				{ "controlword_pp_abs_rel",                     static_cast<uint16_t>(1<<6) },
-                { "controlword_pp_change_on_setpoint",          static_cast<uint16_t>(1<<9) },
+                { "controlword_pp_change_on_set_point",          static_cast<uint16_t>(1<<9) },
 				
 				// control word flags homing mode specific
 				{ "controlword_hm_operation_start",	static_cast<uint16_t>(1<<4) },
