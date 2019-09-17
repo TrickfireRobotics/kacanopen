@@ -116,9 +116,10 @@ namespace kaco {
 				{ "controlword_vl_use_ref",		static_cast<uint16_t>(1<<6) },
 				
 				// control word flags profile position mode specific
-				{ "controlword_pp_new_set_point",				static_cast<uint16_t>(1<<4) },
-				{ "controlword_pp_change_set_immediately",		static_cast<uint16_t>(1<<5) },
-				{ "controlword_pp_abs_rel",						static_cast<uint16_t>(1<<6) },
+				{ "controlword_pp_new_set_point",               static_cast<uint16_t>(1<<4) },
+				{ "controlword_pp_change_set_immediately",      static_cast<uint16_t>(1<<5) },
+				{ "controlword_pp_abs_rel",                     static_cast<uint16_t>(1<<6) },
+                { "controlword_pp_change_on_setpoint",          static_cast<uint16_t>(1<<9) },
 				
 				// control word flags homing mode specific
 				{ "controlword_hm_operation_start",	static_cast<uint16_t>(1<<4) },
